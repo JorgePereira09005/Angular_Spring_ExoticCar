@@ -5,7 +5,7 @@
  
  Please edit the "spring.datasource.username" and "spring.datasource.password" fields in the application.properties file in src/main/resources with the required information to access your local instance of MySQL.
  
- Run the SQL script in the found inside to create the MySQL database schema.
+ Run the SQL script found inside to create the MySQL database schema.
  
  ![image](https://user-images.githubusercontent.com/61985975/80978699-50900400-8e1e-11ea-8634-f9512fc544d5.png)
  
