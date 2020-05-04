@@ -1,0 +1,57 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+
+        <h2>{{currentBrandName}}</h2>
+        <br>
+        <br>
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div *ngFor="let tempCarModel of carModels" class="col-md-3">
+
+                    <div class="product-box">
+
+                        <a routerLink="/carModels/{{tempCarModel.id}}">
+                            <img src="{{tempCarModel.imageUrl}}" class="img-responsive">
+                        </a>
+                        <br>
+                        <a routerLink="/carModels/{{tempCarModel.id}}">
+                            <h1>{{tempCarModel.name}}</h1>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div *ngIf="carModels?.length == 0" class="alert alert-warning col-md-12">
+                    No models found.
+                </div>
+
+            </div>
+
+            <div class="footer-pagination">
+                <div class="row">
+                    <div class="col-md-6"></div>
+
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6" >
+
+                            <ngb-pagination [(page)]="pageNumber"
+                                            [pageSize]="pageSize"
+                                            [collectionSize]="totalElements"
+                                            [maxSize]="5" 
+                                            [boundaryLinks]="true"
+                                            (pageChange)="listCarModels()">
+                            </ngb-pagination>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

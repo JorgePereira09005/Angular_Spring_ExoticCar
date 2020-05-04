@@ -1,0 +1,89 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"/>
+<style>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .comment {
+        background-color: darkgray;
+        border-radius:4px;
+        font-size:16px;
+        padding:15px;
+        margin:5px;
+    }
+
+    .textarea {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+</style>
+
+
+
+<div class="detail-section">
+    <div class="container-fluid">
+        <div class="row">
+
+            <img src={{carModel?.imageUrl}} />
+
+            <h2>{{carModel.name}}</h2>
+            <hr>
+            <br>
+    
+            
+            <h4>About</h4>
+            <p>{{carModel.description}}</p>
+
+            <br>
+
+            <h5>Chat about this!</h5>
+            <br>
+            
+            <div class="text-center">
+                <input #posterName type="text" 
+                    placeholder="Type your name!"
+                    class="au-input au-input-sm" />
+            </div>
+
+            <br>
+
+            <div class="text-center">
+                <textarea #postContent type="text" class="input" placeholder="Send a message to other viewers!"
+                    id="textsend"  rows="4" cols="50" onkeyup="success()" name="message" ></textarea>
+            </div>
+            
+            <br>
+            <br>
+
+            <div class="text-center" >
+                    <button (click)="sendMessage(carModel.id, postContent.value, posterName.value)" 
+                        id="button" type="submit" class="au-btn-submit" disabled >
+                        Send!
+                    </button>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="container-fluid">
+
+                <div *ngFor="let tempPost of posts" col="col-md-3">
+                    <div class="comment">
+                        <p>{{tempPost.content}}</p>
+                    </div>
+                    <p>Posted by: <b>{{tempPost.posterName}}</b> at {{tempPost.datePost}}</p>
+                    <br>
+                </div>
+            </div>
+
+            <br>
+
+            <a routerLink="/carModels" class="mt-8">Back to the exhibition</a>
+
+        </div>
+    </div>
+</div>
