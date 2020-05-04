@@ -1,5 +1,5 @@
 # Angular_Spring_ExoticCar
- Website made in Angular and Spring Boot for viewing exotic cars, backed by a MySQL database. 
+ Website made in Angular and Spring Boot for viewing exotic cars, backed by a MySQL database. The database stores information about the car models and also stores the comments left by users for each car. 
  
  Browser cars by brand, use the search feature to find a certain car model and leave comments!
  
